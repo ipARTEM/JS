@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let a = 8;
+        let b = 7;
+
+        if (a >= 0 && b >= 0)
+        {
+            alert(a - b);       //1
+        }
+
+        a = -8;
+        b = -7;
+
+        if (a < 0 && b < 0) {
+            alert(a * b);       //56
+        }
+
+        a = 8;
+        b = -7;
+
+        if ((a <= 0 && b > 0) || (b <= 0 &&  a > 0)) {
+            alert(a + b);       //1
+        }
+
+        a = -8;
+        b = 7;
+
+        if ((a <= 0 && b > 0) || (b <= 0 && a > 0)) {
+            alert(a + b);       //-1
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
