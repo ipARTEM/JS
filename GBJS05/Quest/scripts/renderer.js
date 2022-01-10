@@ -20,6 +20,21 @@ let renderer = {
 
         }
         return `<table><tbody>${board}</tbody></table>`;
+    },
+
+    //Если ячейка с переданными координатами есть, то возвращается её объект
+    getSquare(position) {
+        return document.querySelector(`[data-x="${position.x}"][data-y="${position.y}"]`);
+    },
+
+    //Метод рисует расположение пользователя
+    renderUserPosition(position) {
+        let square = this.getSquare(position);
+        square.classList.add("user");
+    },
+
+    clearUserPosition() {
+        document.querySelector(".user").classList.remove("user");
     }
 
     
