@@ -37,6 +37,14 @@ class Board {
         }
     }
 
+    //метод отчисти игрового пол€
+    clearBoard() {
+        const tdElems = document.querySelectorAll("td");
+        tdElems.forEach(function (td) {
+            td.className = "";
+        })
+    }
+
     //получаем €чейку таблицы
     getCellEl(x, y) {
         return this.boardEl.querySelector(`tr:nth-child(${y}) td:nth-child(${x})`);
@@ -55,9 +63,20 @@ class Board {
         return null;
     }
 
+    //проверка €вл€етс€ ли следующий шаг, шаг в стену
+    isNextStepToWall(nextCellCoords) {
+        let nextCell = this.getCellEl(nextCellCoords.x, nextCellCoords.y);
+        return nextCell === null;
+    }
+
     //метод рисует еду на игровом поле
     renderFood(coords) {
         const foodCell = this.getCellEl(coords.x, coords.y);
         foodCell.classList.add("food");
+    }
+
+    //метод провер€ет съела ли змейка еду
+    isHeadOnFood() {
+        return this.boardEl.querySelector(".food").classList.contains("snakeBody");
     }
 }

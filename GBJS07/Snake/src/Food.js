@@ -11,6 +11,10 @@ class Food {
         this.board = board;
     }
 
+    setFood() {
+        this.board.renderFood(this);
+    }
+
     //метод устанавливает новую случайную еду
     setNewFood() {
         const food = this.generateRandomCoordinates();
