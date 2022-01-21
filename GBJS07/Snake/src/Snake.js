@@ -6,16 +6,9 @@ class Snake {
         this.body = [
             {
                 x: 1,
-                y: 3,
-            },
-            {
-                x: 1,
-                y: 2,
-            },
-            {
-                x: 1,
                 y: 1,
             },
+            
         ];
 
         this.direction = "down";

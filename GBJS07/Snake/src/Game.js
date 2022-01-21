@@ -5,16 +5,20 @@ class Game {
         this.messageEI = document.getElementById("message");
     }
 
-    init(settings, status, board, snake, menu, food) {
+    init(settings, status, board, snake, menu, food, score) {
         this.settings = settings;
         this.status = status;
         this.board = board;
         this.snake = snake;
         this.menu = menu;
         this.food = food;
+        this.score = score;
     }
 
     run() {
+
+        this.score.setToWin(this.settings.winLength);
+
         let game = this;
         let newStartFn = this.start.bind(game);
 
@@ -46,13 +50,15 @@ class Game {
     doTick() {
         this.snake.performStep();
 
+        this.score.setCurrent(this.snake.body.length);
+
         if (this.isGameLost()) {
             return;
         }
 
-        //if (this.isGameWon()) {
-        //    return;
-        //}
+        if (this.isGameWon()) {
+            return;
+        }
 
         if (this.board.isHeadOnFood()) {
             this.snake.increaseBody();
