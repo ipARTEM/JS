@@ -52,9 +52,9 @@ class Game {
 
         this.score.setCurrent(this.snake.body.length);
 
-        if (this.isGameLost()) {
-            return;
-        }
+        //if (this.isGameLost()) {          //метод устарел
+        //    return;
+        //}
 
         if (this.isGameWon()) {
             return;
