@@ -56,6 +56,10 @@ class Game {
         //    return;
         //}
 
+        if (this.isSnakeStepperOntoItself()) {
+            return;
+        }
+
         if (this.isGameWon()) {
             return;
         }
@@ -75,6 +79,19 @@ class Game {
         if (this.snake.body.length == this.settings.winLength) {
             clearInterval(this.tickIdentifier);
             this.setMessage("You have won!!!");
+            return true;
+        }
+        return false;
+    }
+
+    isSnakeStepperOntoItself() {
+        let cellArr = this.snake.body.map(function (cellCoords) {
+            return cellCoords.x.toString() + cellCoords.y.toString();
+        });
+        let head = cellArr.shift();
+        if (cellArr.includes(head)) {
+            clearInterval(this.tickIdentifier);
+            this.setMessage("You have lost!!!");
             return true;
         }
         return false;

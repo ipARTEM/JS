@@ -29,7 +29,7 @@ class Settings {
         }
         this.speed = defaultParams.speed;
 
-        if (defaultParams.winLength < 5 || defaultParams.winLength > 50) {
+        if (defaultParams.winLength < 5 || defaultParams.winLength > 150) {
             throw new Error("Неверные настройки, значение colsCount должно быть в диапазоне от 5 до 50")
         }
         this.winLength = defaultParams.winLength;
