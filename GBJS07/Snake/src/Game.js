@@ -86,7 +86,7 @@ class Game {
 
     isSnakeStepperOntoItself() {
         let cellArr = this.snake.body.map(function (cellCoords) {
-            return cellCoords.x.toString() + cellCoords.y.toString();
+            return cellCoords.x.toString()+":" + cellCoords.y.toString();
         });
         let head = cellArr.shift();
         if (cellArr.includes(head)) {
@@ -98,14 +98,14 @@ class Game {
     }
 
     //метод проверки проигрыша в игре
-    isGameLost() {
-        if (this.board.isNextStepToWall(this.snake.body[0])) {
-            clearInterval(this.tickIdentifier);
-            this.setMessage("You have lost!!!");
-            return true;
-        }
-        return false;
-    }
+    //isGameLost() {
+    //    if (this.board.isNextStepToWall(this.snake.body[0])) {
+    //        clearInterval(this.tickIdentifier);
+    //        this.setMessage("You have lost!!!");
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
     pressKeyHandler(event) {
         switch (event.key) {
