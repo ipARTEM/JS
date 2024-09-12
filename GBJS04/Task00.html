@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var car = {
+            make: "Audi",
+            model: "A5",
+            year: 2015,
+            color: "red",
+            passengers: 2,
+            power: 225
+        };
+
+        console.log(car.model);
+        car.power = 300;
+
+        car.odometer = 100;
+        delete car.odometer;
+
+        car.odometer = 0;
+
+        function haveRoadTrip(my_car, distance) {
+            my_car.odometer += distance;
+        }
+        haveRoadTrip(car, 150);
+        console.log(car.odometer);
+
+        var car2 = {
+            make: "Audi",
+            model: "A5",
+            year: 2015,
+            color: "red",
+            passengers: 2,
+            power: 225,
+            odometer: 0,
+            startEngine: function () {
+                console.log("Engine started");
+            }
+        };
+
+        car2.startEngine();
+
+        var car3 = {
+            make: "Audi",
+            model: "A5",
+            year: 2015,
+            color: "red",
+            passengers: 2,
+            power: 225,
+            odometer: 0,
+            engineIsStarted: false,
+            startEngine: function () {
+                this.engineIsStarted = true;
+            },
+            stopEngine: function () {
+                this.engineIsStarted = false;
+            },
+            haveRoadTrip: function (distance) {
+                if (this.engineIsStarted) {
+                    this.odometer += distance;
+                } else {
+                    alert("Сначала запустите двигатель!");
+                }
+            }
+        };
+
+        for (var prop in car3) {
+            console.log(prop + ": " + car3[prop]);
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
