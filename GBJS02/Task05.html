@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let a = 8;
+        let b = 7;
+        let operation;
+
+        function sum(a,b) {
+            return a + b;
+        }
+
+        function subtraction(a, b) {
+            return a - b;
+        }
+
+        function multiplication(a, b) {
+            return a * b;
+        }
+
+        function division(a, b) {
+            return a / b;
+        }
+
+
+        function mathOperation(arg1, arg2, operation) {
+
+            switch ( operation) {
+
+                case "+":
+                    alert(sum(a, b));
+                    break;
+
+                case "-":
+                    alert(subtraction(a, b));
+                    break;
+
+                case "*":
+                    alert(multiplication(a, b));
+                    break;
+
+                case "/":
+                    alert(division(a, b));
+                    break;
+
+                default:
+            }
+
+        }
+
+        mathOperation(a,b,"+");
+        mathOperation(a,b,"-");
+        mathOperation(a,b,"*");
+        mathOperation(a,b,"/");
+       
+
+    </script>
+</body>
+</html>
